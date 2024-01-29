@@ -6,9 +6,16 @@ export const AppRoutes = () => {
 
   return (
     <Routes>
-      <Route path={PAGE_INITIAL} element={<Button>Teste</Button>} />
+      <Route
+        path={PAGE_INITIAL}
+        element={
+          <Button variant='contained' color='primary'>
+            Teste
+          </Button>
+        }
+      />
 
-      <Route path="*" element={<Navigate to={PAGE_INITIAL} />} />
+      <Route path='*' element={<Navigate to={PAGE_INITIAL} />} />
     </Routes>
   );
 };
