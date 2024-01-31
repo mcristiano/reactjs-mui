@@ -1,7 +1,6 @@
-import { Context, PropsWithChildren, createContext, useCallback, useMemo, useState } from 'react';
+import { PropsWithChildren, createContext, useCallback, useMemo, useState } from 'react';
 import { DarkTheme, LightTheme } from '../themes';
 import { Box, Theme, ThemeProvider } from '@mui/material';
-import { useAppThemeContext2 } from './useAppThemeContext';
 
 interface IThemeContextData {
   themeName: 'light' | 'dark';
