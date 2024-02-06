@@ -1,0 +1,37 @@
+{
+  "gitpod.openInStable.neverPrompt": true,
+  "workbench.colorTheme": "Default Dark Modern",
+
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "cSpell.language": "en,pt-BR",
+  "cSpell.words": ["linebreak"],
+
+  "eslint.lintTask.enable": true,
+
+  "errorLens.statusBarColorsEnabled": true,
+  "errorLens.statusBarMessageEnabled": true,
+  "errorLens.statusBarMessageType": "closestProblem",
+  "errorLens.followCursor": "closestProblem",
+  "errorLens.gutterIconsEnabled": true,
+  "errorLens.scrollbarHackEnabled": true,
+  "errorLens.fontStyleItalic": true,
+  "errorLens.alignMessage": {
+    "start": 50,
+    "end": 40,
+    "minimumMargin": 0
+  },
+  "errorLens.delay": 10,
+  "errorLens.multilineMessage": {
+    "decorationMaxNumberOfLines": 6,
+    "preferFittingMessageMultiplier": 2,
+    "maxColumnForCalculation": 130,
+    "highlightProblemLine": "line",
+    "alignStart": 0,
+    "alignEnd": 0,
+    "margin": 4,
+    "padding": 1,
+    "borderRadius": "",
+    "useFixedPosition": false
+  }
+}
