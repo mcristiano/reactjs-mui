@@ -11,14 +11,44 @@ import {
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-
 import { PropsWithChildren } from 'react';
+import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 import { useDrawerContext } from '../../contexts';
+import { useAppThemeContext } from '../../contexts/useAppThemeContext';
+import { LightTheme } from '../../themes/Light';
+
+interface IListItemLink {
+  to: string;
+  icon: string;
+  label: string;
+  onClick: (() => void) | undefined;
+}
+
+const ListItemLink = ({ to, icon, label, onClick }: IListItemLink) => {
+  const navigate = useNavigate();
+
+  const resolvedPath = useResolvedPath(to);
+  const match = useMatch({ path: resolvedPath.pathname, end: false });
+
+  const handleClick = () => {
+    navigate(to);
+    onClick?.();
+  };
+  return (
+    <ListItemButton selected={!!match} onClick={handleClick}>
+      <ListItemIcon>
+        <Icon>{icon}</Icon>
+      </ListItemIcon>
+      <ListItemText primary={label} />
+    </ListItemButton>
+  );
+};
 
 export const MenuLateral = ({ children }: PropsWithChildren) => {
   const theme = useTheme();
   const smDown = useMediaQuery(theme.breakpoints.down('sm'));
-  const { isDrawerOpen, toggleDrawerOpen } = useDrawerContext();
+  const { isDrawerOpen, toggleDrawerOpen, drawerOptions } = useDrawerContext();
+  const { themeName, toggleTheme } = useAppThemeContext();
 
   return (
     <>
@@ -31,13 +61,28 @@ export const MenuLateral = ({ children }: PropsWithChildren) => {
             />
           </Box>
           <Divider />
+
           <Box flex={1}>
             <List component='nav'>
-              <ListItemButton>
+              {drawerOptions.map((drawerOption) => (
+                <ListItemLink
+                  key={drawerOption.path}
+                  label={drawerOption.label}
+                  icon={drawerOption.icon}
+                  to={drawerOption.path}
+                  onClick={smDown ? toggleDrawerOpen : undefined}
+                />
+              ))}
+            </List>
+          </Box>
+
+          <Box>
+            <List component='nav'>
+              <ListItemButton onClick={toggleTheme}>
                 <ListItemIcon>
-                  <Icon>home</Icon>
+                  <Icon>{themeName === 'light' ? 'dark_mode' : 'light_mode'}</Icon>
                 </ListItemIcon>
-                <ListItemText primary='Pagina Inicial' />
+                <ListItemText primary='Alternar tema' />
               </ListItemButton>
             </List>
           </Box>
