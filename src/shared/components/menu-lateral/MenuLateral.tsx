@@ -15,7 +15,6 @@ import { PropsWithChildren } from 'react';
 import { useMatch, useNavigate, useResolvedPath } from 'react-router-dom';
 import { useDrawerContext } from '../../contexts';
 import { useAppThemeContext } from '../../contexts/useAppThemeContext';
-import { LightTheme } from '../../themes/Light';
 
 interface IListItemLink {
   to: string;

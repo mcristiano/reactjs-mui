@@ -1,5 +1,5 @@
-export const Enviroement = {
-  LIMITE_DE_LINHAS: 10,
+export const Environment = {
+  LIMITE_DE_LINHAS: 5,
   INPUT_BUSCA_PLACEHOLDER: 'Pesquisar...',
   LISTAGEM_VAZIA: 'Nenhum registro encontrado',
   URL_BASE: 'http://localhost:3333',

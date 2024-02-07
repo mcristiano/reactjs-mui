@@ -5,7 +5,7 @@ interface IBotoesCfg extends PropsWithChildren {
   textoBotao?: string;
   mostrarBotao: boolean;
   mostrarCarregando: boolean;
-  aoClickar?: () => void;
+  aoClicar?: () => void;
   icon?: string;
 }
 
@@ -78,7 +78,7 @@ const ButtonPlus: React.FC<ButtonPlusProps> = ({ textoBotao, mostrarBotao, mostr
 
 export const FerramentasDeDetalhe = ({
   btnSalvar,
-  btnSalvarEFechar,
+  btnSalvarEFechar: btnSalvarEVoltar,
   btnApagar,
   btnNovo,
   btnVoltar,
@@ -102,7 +102,13 @@ export const FerramentasDeDetalhe = ({
       {btnSalvar?.mostrarCarregando && <Skeleton width={100} height={60} />}
       {/* <ButtonPlus botaoCfg={btnSalvar} /> */}
       {btnSalvar?.mostrarBotao && !btnSalvar?.mostrarCarregando && (
-        <Button color='primary' disableElevation variant='contained' startIcon={<Icon>save</Icon>}>
+        <Button
+          color='primary'
+          disableElevation
+          variant='contained'
+          startIcon={<Icon>save</Icon>}
+          onClick={btnSalvar.aoClicar}
+        >
           <Typography variant='button' whiteSpace='nowrap' textOverflow='ellipsis' overflow='hidden'>
             Salvar
           </Typography>
@@ -110,9 +116,15 @@ export const FerramentasDeDetalhe = ({
       )}
       {!smDown && !mdDown && (
         <Box>
-          {btnSalvarEFechar?.mostrarCarregando && <Skeleton width={100} height={60} />}
-          {btnSalvarEFechar.mostrarBotao && !btnSalvarEFechar?.mostrarCarregando && (
-            <Button color='primary' disableElevation variant='outlined' startIcon={<Icon>save</Icon>}>
+          {btnSalvarEVoltar?.mostrarCarregando && <Skeleton width={100} height={60} />}
+          {btnSalvarEVoltar.mostrarBotao && !btnSalvarEVoltar?.mostrarCarregando && (
+            <Button
+              color='primary'
+              disableElevation
+              variant='outlined'
+              startIcon={<Icon>save</Icon>}
+              onClick={btnSalvarEVoltar.aoClicar}
+            >
               <Typography variant='button' whiteSpace='nowrap' textOverflow='ellipsis' overflow='hidden'>
                 Salvar e Voltar
               </Typography>
@@ -123,7 +135,13 @@ export const FerramentasDeDetalhe = ({
       {/* //---------------------------------------------------------------------- */}
       {btnApagar?.mostrarCarregando && <Skeleton width={100} height={60} />}
       {btnApagar?.mostrarBotao && !btnApagar?.mostrarCarregando && (
-        <Button color='primary' disableElevation variant='outlined' startIcon={<Icon>remove</Icon>}>
+        <Button
+          color='primary'
+          disableElevation
+          variant='outlined'
+          startIcon={<Icon>remove</Icon>}
+          onClick={btnApagar.aoClicar}
+        >
           <Typography variant='button' whiteSpace='nowrap' textOverflow='ellipsis' overflow='hidden'>
             Apagar
           </Typography>
@@ -131,7 +149,13 @@ export const FerramentasDeDetalhe = ({
       )}
       {btnNovo?.mostrarCarregando && !mdDown && <Skeleton width={100} height={60} />}
       {btnNovo?.mostrarBotao && !btnNovo?.mostrarCarregando && !mdDown && (
-        <Button color='primary' disableElevation variant='outlined' startIcon={<Icon>add</Icon>}>
+        <Button
+          color='primary'
+          disableElevation
+          variant='outlined'
+          startIcon={<Icon>add</Icon>}
+          onClick={btnNovo.aoClicar}
+        >
           <Typography variant='button' whiteSpace='nowrap' textOverflow='ellipsis' overflow='hidden'>
             {btnNovo.textoBotao}
           </Typography>
@@ -139,13 +163,19 @@ export const FerramentasDeDetalhe = ({
       )}
       {btnVoltar?.mostrarBotao &&
         (btnSalvar?.mostrarBotao ||
-          btnSalvarEFechar.mostrarBotao ||
+          btnSalvarEVoltar.mostrarBotao ||
           btnApagar?.mostrarBotao ||
           btnNovo?.mostrarBotao ||
           btnVoltar?.mostrarBotao) && <Divider variant={'middle'} orientation='vertical' flexItem={true} />}
       {btnVoltar?.mostrarCarregando && <Skeleton width={100} height={60} />}
       {btnVoltar?.mostrarBotao && !btnVoltar?.mostrarCarregando && (
-        <Button color='primary' disableElevation variant='outlined' startIcon={<Icon>arrow_back</Icon>}>
+        <Button
+          color='primary'
+          disableElevation
+          variant='outlined'
+          startIcon={<Icon>arrow_back</Icon>}
+          onClick={btnVoltar.aoClicar}
+        >
           <Typography variant='button' whiteSpace='nowrap' textOverflow='ellipsis' overflow='hidden'>
             Voltar
           </Typography>

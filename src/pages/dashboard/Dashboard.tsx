@@ -11,14 +11,14 @@ export const Dashboard = () => (
         btnSalvar={{
           mostrarBotao: true,
           mostrarCarregando: false,
-          aoClickar: () => {
+          aoClicar: () => {
             /* função de clique */
           },
         }}
         btnSalvarEFechar={{
           mostrarBotao: true,
           mostrarCarregando: false,
-          aoClickar: () => {
+          aoClicar: () => {
             /* função de clique */
           },
         }}
@@ -26,21 +26,21 @@ export const Dashboard = () => (
           textoBotao: 'Novo',
           mostrarBotao: true,
           mostrarCarregando: false,
-          aoClickar: () => {
+          aoClicar: () => {
             /* função de clique */
           },
         }}
         btnVoltar={{
           mostrarBotao: true,
           mostrarCarregando: false,
-          aoClickar: () => {
+          aoClicar: () => {
             /* função de clique */
           },
         }}
         btnApagar={{
           mostrarBotao: true,
           mostrarCarregando: false,
-          aoClickar: () => {
+          aoClicar: () => {
             /* função de clique */
           },
         }}
