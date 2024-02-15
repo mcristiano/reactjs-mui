@@ -4,7 +4,9 @@
 
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
+
   "cSpell.language": "en,pt-BR",
+
   "cSpell.words": ["linebreak"],
 
   "eslint.lintTask.enable": true,
@@ -33,5 +35,104 @@
     "padding": 1,
     "borderRadius": "",
     "useFixedPosition": false
-  }
+  },
+  "editor.fontSize": 14,
+  "editor.lineHeight": 24,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+
+  "editor.backgroundOpacity": 1,
+
+  "explorer.compactFolders": false,
+
+  // Aplica linhas verticais para lembrar de quebrar linha em códigos muito grandes
+  "editor.rulers": [80, 120],
+
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "[javascriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "always"
+    }
+  },
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+
+  "files.associations": {
+    ".sequelizerc": "javascript",
+    ".stylelintrc": "json",
+    ".prettierrc": "json"
+  },
+
+  // Aplica um sinal visual na esquerda da linha selecionada
+  "editor.renderLineHighlight": "gutter",
+
+  // Aumenta a fonte do terminal
+  "terminal.integrated.fontSize": 14,
+
+  // Define o tema dos ícones na sidebar
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.tabSize": 2,
+  "extensions.ignoreRecommendations": true,
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "never",
+
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.enabled": false,
+
+  "breadcrumbs.enabled": true,
+  "git.enableSmartCommit": true,
+  "editor.parameterHints.enabled": false,
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "explorer.confirmDragAndDrop": false,
+  "liveshare.featureSet": "insiders",
+  "explorer.confirmDelete": false,
+
+  "typescript.tsserver.log": "off",
+  "javascript.suggest.autoImports": false,
+  "typescript.suggest.autoImports": true,
+
+  "sync.gist": "27dc21c914c8fd375ac9d1b555527e9b",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "php.validate.executablePath": "/usr/bin/php",
+
+  "todo-tree.tree.showScanModeButton": false,
+  "php.executablePath": "",
+
+  "teslint.autoFixOnSave": true,
+
+  "[javascript][javascriptreact][typescript][typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+
+  "git.openRepositoryInParentFolders": "never",
+  "glassit.alpha": 255,
+  "remote.SSH.defaultExtensions": ["gitpod.gitpod-remote-ssh"],
+  "redhat.telemetry.enabled": true,
+  "remote.autoForwardPortsSource": "hybrid",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "editor.codeActionsOnSave": {}
 }

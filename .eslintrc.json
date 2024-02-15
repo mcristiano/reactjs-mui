@@ -5,29 +5,88 @@
     "node": true
   },
   "extends": [
+    "airbnb",
     "standard-with-typescript",
     "eslint-config-prettier",
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
+    // "plugin:react/recommended",
+    // "plugin:@typescript-eslint/recommended",
+    // "plugin:react/recommended",
+    // "plugin:react-hooks/recommended",
+    // "plugin:import/recommended",
+    // "plugin:jsx-a11y/recommended",
+    // "plugin:@typescript-eslint/recommended",
     "eslint:recommended",
+    "simple-import-sort"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "react",
+    "@stylistic/eslint-plugin-js",
+    "eslint-plugin-align",
+    "eslint-plugin-import-helpers",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:import/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
+
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "react"],
   "rules": {
-    "indent": ["error", 4],
+    "indent": ["error", 4, { "MemberExpression": 0 }],
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
+    "max-len": [
+      "error",
+      { "tabWidth": 4 },
+      { "ignoreComments": true },
+      { "comments": 65 },
+      { "ignoreComments": true },
+      { "ignoreTrailingComments": true },
+      { "ignoreUrls": true },
+      { "ignoreStrings": true },
+      { "ignoreTemplateLiterals": true },
+      { "ignoreRegExpLiterals": true }
+    ],
+
+    // automático abaixo do codeium
+    "comma-dangle": ["error", "always-multiline"],
+    "react/prop-types": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".jsx"] }],
+
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports",
+        "disallowTypeAnnotations": false
+      }
+    ],
+
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "arrow-function"
+      }
+    ],
+    // automatico acima do codeium
 
     "no-unused-vars": [
       "error",
@@ -38,7 +97,10 @@
         "argsIgnorePattern": "^_"
       }
     ],
+    "no-console": "off",
     "react/react-in-jsx-scope": "off",
+
+    "simple-import-sort/imports": "error",
 
     "object-curly-spacing": ["error", "always"],
     "array-bracket-spacing": ["error", "always"],
@@ -47,6 +109,22 @@
       {
         "before": false,
         "after": true
+      }
+    ],
+
+    "@stylistic/array-bracket-spacing": ["error", "always"],
+    "@stylistic/block-spacing": ["error", "always"],
+    "@stylistic/camelcase": ["error", { "allow": ["camelCase"] }],
+    "@stylistic/comma-dangle": ["error", "never"],
+    "@stylistic/indent": ["error", 2],
+
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": ["/^react/", "module", ["parent", "sibling", "index"]],
+
+        "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ]
   }

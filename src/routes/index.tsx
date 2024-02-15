@@ -1,6 +1,7 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { useDrawerContext } from '../shared/contexts';
 import { useEffect } from 'react';
+
+import { useDrawerContext } from '../shared/contexts';
 import { Dashboard } from '../pages';
 import { ListagemDePessoas } from '../pages';
 import { DetalheDePessoas } from '../pages/pessoas/DetalheDePessoas';
@@ -15,8 +16,9 @@ export const AppRoutes = () => {
       { icon: 'home', path: '/pagina-inicial', label: 'Pagina Inicial' },
       { icon: 'people', path: '/pessoas', label: 'Pessoas' },
     ]);
-  }),
-    [];
+    // }),
+    //   []; /pqp
+  }, []);
 
   return (
     <Routes>

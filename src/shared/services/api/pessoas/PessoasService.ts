@@ -40,7 +40,9 @@ const getAll = async (page = 1, filter = ''): Promise<TPessoasComTotalCount | Er
 
 const getById = async (id: number): Promise<{ data: IDetalhePessoa } | Error> => {
   try {
+    console.log('id', id);
     const { data } = await Api.get(`pessoas/${id}`);
+    console.log('id', id, 'data:', data);
 
     if (data) {
       return {
@@ -69,8 +71,8 @@ const create = async (dados: Omit<IDetalhePessoa, 'id'>): Promise<number | Error
 
 const updateById = async (id: number, dados: IDetalhePessoa): Promise<void | Error> => {
   try {
-    await Api.put(`pessoas/${id}`, dados);
-    return new Error('Erro ao consultar os dados');
+    const ret = await Api.put(`pessoas/${id}`, dados);
+    console.log('ret', ret);
   } catch (error) {
     return new Error((error as { message: string }).message || ' \n Erro ao consultar os dados!');
   }

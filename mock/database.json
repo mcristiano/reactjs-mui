@@ -2,21 +2,15 @@
   "pessoas": [
     {
       "id": 3,
-      "cidadeId": 3,
+      "nomeCompleto": "Suporte 1",
       "email": "suporte@teste.com",
-      "nomeCompleto": "Suporte"
+      "cidadeId": 3
     },
     {
       "id": 4,
       "cidadeId": 4,
       "email": "financeiro@teste.com",
       "nomeCompleto": "Financeiro"
-    },
-    {
-      "id": 5,
-      "cidadeId": 5,
-      "email": "rh@teste.com",
-      "nomeCompleto": "RH"
     },
     {
       "id": 6,
@@ -32,9 +26,9 @@
     },
     {
       "id": 8,
-      "cidadeId": 8,
+      "nomeCompleto": "Logística 22222",
       "email": "logistica@teste.com",
-      "nomeCompleto": "Logística"
+      "cidadeId": 8
     },
     {
       "id": 9,
@@ -137,6 +131,12 @@
       "cidadeId": 25,
       "email": "design2@teste.com",
       "nomeCompleto": "Design 2"
+    },
+    {
+      "nomeCompleto": "teobaldo ",
+      "email": "telbado@teste.bla",
+      "cidadeId": "99",
+      "id": 26
     }
   ]
 }
