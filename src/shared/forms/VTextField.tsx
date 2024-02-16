@@ -17,7 +17,6 @@ export const VTextField = ({ name, ...rest }: PropsWithChildren<TVTextFieldProps
       setValue: (_, newValue) => setValue(newValue),
       //
     });
-    //console.log(registerField, fieldName, value);
   }, [registerField, fieldName, value]);
 
   return (
